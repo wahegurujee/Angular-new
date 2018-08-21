@@ -1,0 +1,79 @@
+[
+  {
+    "id": "1",
+    "sub": "1",
+    "preferredUsername": "MrA",
+    "name": "Mr A",
+    "email": "mr.a@hm.com",
+    "emailVerified": "true",
+    "contactNumber":8124205005,
+    "status":"Active",
+    "using2fa": "false"
+  },
+  {
+    "id": "2",
+    "sub": "2",
+    "preferredUsername": "MrB",
+    "name": "Mr B",
+    "email": "mr.b@hm.com",
+    "emailVerified": "true",
+    "contactNumber":8210618576,
+    "status":"Active",
+    "using2fa": "false"
+  },
+  {
+    "id": "3",
+    "sub": "3",
+    "preferredUsername": "MrC",
+    "name": "Mr C",
+    "email": "mr.c@hm.com",
+    "emailVerified": "true",
+    "contactNumber":9966558822,
+    "status":"Active",
+    "using2fa": "false"
+  },
+  {
+    "id": "4",
+    "sub": "4",
+    "preferredUsername": "MrD",
+    "name": "Mr D",
+    "email": "mr.d@hm.com",
+    "emailVerified": "true",
+    "contactNumber":6655882214,
+    "status":"Active",
+    "using2fa": "false"
+  },
+  {
+    "id": "5",
+    "sub": "5",
+    "preferredUsername": "MrE",
+    "name": "Mr E",
+    "email": "mr.e@hm.com",
+    "emailVerified": "true",
+    "contactNumber":4422551144,
+    "status":"Active",
+    "using2fa": "false"
+  },
+  {
+    "id": "6",
+    "sub": "6",
+    "preferredUsername": "MrF",
+    "name": "Mr F",
+    "email": "mr.f@hm.com",
+    "emailVerified": "true",
+    "contactNumber":8124205005,
+    "status":"Active",
+    "using2fa": "false"
+  },
+  {
+    "id": "7",
+    "sub": "7",
+    "preferredUsername": "MrG",
+    "name": "Mr G",
+    "email": "mr.g@hm.com",
+    "emailVerified": "true",
+    "contactNumber":1122445588,
+    "status":"Active",
+    "using2fa": "false"
+  }
+]

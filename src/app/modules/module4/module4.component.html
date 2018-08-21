@@ -1,0 +1,44 @@
+<div style="margin-top:20px;">
+  <h2>
+    <b>NgIf,NgFor,NgSwitch,NgStyle,NgClass,NgNonBindable Example</b>
+  </h2>
+  <div>
+    <span style="color:rgb(100, 91, 91)">
+      <i>NgNonBindable is used when we want to tell Angular not to perform any binding for an element.</i>
+    </span>
+    <pre ngNonBindable>{{ name }}</pre>
+  </div>
+  <div class="row">
+    <div class="col-sm-2"></div>
+    <div class="col-sm-4" [ngStyle]="{'background-image':'url(./assets/white2.jpg)'}">
+      <small [ngStyle]="{'background-color':'#fff','font-size.px':20}" class="text-muted">NgFor and NgIf</small>
+      <ul *ngFor="let group of peopleByCountry;let i=index">
+        <li>{{i+1}} - {{ group.country }}</li>
+        <ul *ngFor="let person of group.people;let i=index">
+          <li *ngIf="person.age > 18" [ngStyle]="{'font-size.px':18}">
+            {{i+1}} - {{ person.name }} : {{person.age}}
+          </li>
+        </ul>
+      </ul>
+    </div>
+    <div class="col-sm-4" [ngStyle]="{'background-image':'url(./assets/white3.jpg)'}">
+      <small [ngStyle]="{'background-color':'#fff','font-size.px':20}" class="text-muted">NgSwitch</small>
+      <ul *ngFor="let u of user" [ngSwitch]="u.country" [ngStyle]="{'font-size.px':18}" 
+        [ngClass]="{
+        'text-success':u.country === 'UK',
+        'text-primary':u.country === 'USA',
+        'text-danger':u.country === 'HK'
+        }">
+        <li *ngSwitchCase="'UK'">{{ u.name }} ({{ u.country }})
+        </li>
+        <li *ngSwitchCase="'USA'">{{ u.name }} ({{ u.country }})
+        </li>
+        <li *ngSwitchCase="'HK'">{{ u.name }} ({{ u.country }})
+        </li>
+        <li *ngSwitchDefault>{{ u.name }} ({{ u.country }})
+        </li>
+      </ul>`
+    </div>
+    <div class="col-sm-2"></div>
+  </div>
+</div>

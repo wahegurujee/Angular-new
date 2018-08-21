@@ -1,0 +1,38 @@
+<nav class="navbar navbar-expand-sm nav_bc_color navbar-dark">
+  <!-- Brand/logo -->
+  <a class="navbar-brand" href="https://www.happiestminds.com">
+    <img src="assets/logo.jpg" alt="logo" style="width:75px;">
+    <span class="app-title">Angular-5</span>
+  </a>
+  <!-- Links -->
+  <span class="navbar-collapse">
+    <ul class="nav navbar-nav nav-pills navBarPadding">
+      <li routerLinkActive="active">
+        <a class="nav-link" [routerLink]="['/module1']">Module1</a>
+      </li>
+      <li routerLinkActive="active">
+        <a class="nav-link" [routerLink]="['/module2']">Module2</a>
+      </li>
+      <li routerLinkActive="active">
+        <a class="nav-link" [routerLink]="['/module3']">Module3</a>
+      </li>
+      <li routerLinkActive="active">
+        <a class="nav-link" [routerLink]="['/module4']">Module4</a>
+      </li>
+      <li routerLinkActive="active">
+        <a class="nav-link" [routerLink]="['/module5']">Module5</a>
+      </li>
+      <li routerLinkActive="active">
+        <a class="nav-link" [routerLink]="['/module6']">Module6</a>
+      </li>
+      <li routerLinkActive="active">
+        <a class="nav-link" [routerLink]="['/module7']">Module7</a>
+      </li>
+      <li routerLinkActive="active" (click)="logout()">
+        <div align="right" style="padding-left:650px">
+          <input type="button" value="Logout" class="logout" (click)="logout()" />
+        </div>
+      </li>
+    </ul>
+  </span>
+</nav>

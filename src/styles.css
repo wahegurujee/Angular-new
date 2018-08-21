@@ -1,0 +1,90 @@
+/* You can add global styles to this file, and also import other style files */
+.spinner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -9px;
+    margin-left: -50px;
+    width: 100px;
+    text-align: center;
+  }
+  
+  .spinner > div {
+    width: 18px;
+    height: 18px;
+    background-color: #333;
+  
+    border-radius: 100%;
+    display: inline-block;
+    -webkit-animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+    animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+  }
+  
+  .spinner .bounce1 {
+    -webkit-animation-delay: -0.32s;
+    animation-delay: -0.32s;
+  }
+  
+  .spinner .bounce2 {
+    -webkit-animation-delay: -0.16s;
+    animation-delay: -0.16s;
+  }
+  .ng2-smart-title a {
+    color: #287db6 !important;
+  }
+  
+  .ng2-smart-titles th:first-child input[type="checkbox"] {
+    display: none;
+  }
+  
+  .ng2-smart-filter input, .ng2-smart-filter select {
+    line-height: inherit !important;
+  }
+  
+  .ng2-smart-pagination-nav {
+    width: 100%;
+  }
+  .ng2-smart-pagination-nav .ng2-smart-pagination {
+    float: right;
+  }
+  
+  .ng2-smart-pagination .page-link-next, .ng2-smart-pagination .page-link-prev {
+    font-size: inherit !important;
+  }
+  html, 
+  body {
+      max-height: 100%;
+  }
+
+
+
+
+ /* d3 charts css */
+
+ .tick text {
+  font-size: 12px;
+}
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #4C5554;
+  stroke-width: 1;
+}
+
+.x.axis .tick line {
+  display: none
+}
+
+.domain {
+  display: block !important;
+  stroke: #4C5554 !important;
+  stroke-width: 2 !important;
+}
+.legend {
+  font-size: 12px;
+  font-family: sans-serif;
+}
+rect {
+  stroke-width: 2;
+}

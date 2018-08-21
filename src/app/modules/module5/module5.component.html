@@ -1,0 +1,41 @@
+<div class="container" style="padding-top: 20px">
+    <h2>Angular 5: Template-driven forms</h2>
+
+    <form #validateForm="ngForm" (ngSubmit)="register(validateForm)" countryCity novalidate>
+        <p> Is "validateForm" valid? {{(validateForm.valid?'Yes':'No')}} </p>
+
+        <div class="form-group">
+            <label>Name</label>
+            <input type="text" name="name" class="form-control" #name="ngModel" ngModel required minlength="4" maxlength="22">
+            <errors [control]="name"></errors>
+        </div>
+        <div class="form-group">
+            <label>Email</label>
+            <input type="email" class="form-control" name="email" #email="ngModel" ngModel required email-validate>
+            <errors [control]="email"></errors>
+        </div>
+        <div class="form-group">
+            <label>Age</label>
+            <input type="number" class="form-control" name="age" #age="ngModel" ngModel required age-validate>
+            <errors [control]="age"></errors>
+        </div>
+
+        <div class="form-group" ngModelGroup="address">
+            <h3>Address</h3>
+            <div class="form-group">
+                <label>Country</label>
+                <input type="text" class="form-control" name="country" #country="ngModel" ngModel required minlength="5" maxlength="30">
+                <errors [control]="country"></errors>
+            </div>
+            <div class="form-group">
+                <label>City</label>
+                <input type="text" class="form-control" name="city" ngModel required>
+            </div>
+        </div>
+
+        <errors [control]="validateForm"></errors>
+
+        <!-- <pre>{{validateForm.value | json}}</pre> -->
+        <button type="submit" class="btn btn-primary" [disabled]="validateForm.invalid" style="float: right;">Submit</button>
+    </form>
+</div>

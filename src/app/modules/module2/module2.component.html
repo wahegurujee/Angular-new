@@ -1,0 +1,41 @@
+<div style="margin-top:20px;">
+  <div class="container">
+    <h2>Business Charts</h2>
+    <div class="card">
+      <div class="card-block">
+        <h4 class="card-title">Bar-Chart</h4>
+        <canvas baseChart height="60" [datasets]="barChartData" [labels]="barChartLabels" [colors]="barChartColors" [options]="barChartOptions"
+          [legend]="barChartLegend" [chartType]="barChartType" (chartHover)="barChartHovered($event)" (chartClick)="barChartClicked($event)">
+        </canvas>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-block">
+        <h4 class="card-title">Line-Chart</h4>
+        <canvas baseChart height="60" [datasets]="lineChartData" [labels]="lineChartLabels" [options]="lineChartOptions" [colors]="lineChartColors"
+          [legend]="lineChartLegend" [chartType]="lineChartType" (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)"></canvas>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-block">
+        <h4 class="card-title">Doughnut Chart</h4>
+        <canvas baseChart height="60" [data]="doughnutChartData" [labels]="doughnutChartLabels" [chartType]="doughnutChartType" (chartHover)="doughnutchartHovered($event)"
+          (chartClick)="doughnutchartClicked($event)"></canvas>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-block">
+        <h4 class="card-title">Radar Chart using NgPrime</h4>
+        <p-chart type="radar" [data]="data"></p-chart>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-block">
+        <h4 class="card-title">Line Chart using NgPrime</h4>
+        <p-chart type="line" [options]="options" [data]="lineChartData1" width="width" height="height"></p-chart>
+      </div>
+    </div>
+  </div>
+</div>

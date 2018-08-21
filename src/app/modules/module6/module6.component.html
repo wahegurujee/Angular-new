@@ -1,0 +1,182 @@
+<div class="container" style="padding-top: 20px;">
+  <h2>PrimeNg Example</h2>
+
+  <div style="padding-top: 20px;">
+    <h4>Table-Sections</h4>
+    <p-table [columns]="cols" [value]="cars" [paginator]="true" [rows]="5" sortMode="multiple">
+      <ng-template pTemplate="caption">
+        List of Cars
+      </ng-template>
+      <ng-template pTemplate="header" let-columns>
+        <tr>
+          <th *ngFor="let col of columns" [pSortableColumn]="col.field">
+            {{col.header}}
+            <p-sortIcon [field]="col.field"></p-sortIcon>
+          </th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-rowData let-columns="columns">
+        <tr>
+          <td *ngFor="let col of columns">
+            {{rowData[col.field]}}
+          </td>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="footer" let-columns>
+        <tr>
+          <td *ngFor="let col of columns">
+            {{col.header}}
+          </td>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="summary">
+        There are {{cars?.length}} cars
+      </ng-template>
+    </p-table>
+  </div>
+
+  <div style="padding-top: 20px;">
+    <h4>Vertical-Table-Scroll</h4>
+    <p-table [columns]="cols" [value]="cars" [scrollable]="true" scrollHeight="200px">
+      <ng-template pTemplate="header" let-columns>
+        <tr>
+          <th *ngFor="let col of columns">
+            {{col.header}}
+          </th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-rowData let-columns="columns">
+        <tr>
+          <td *ngFor="let col of columns">
+            {{rowData[col.field]}}
+          </td>
+        </tr>
+      </ng-template>
+    </p-table>
+  </div>
+
+  <div style="padding-top: 20px;">
+    <h4>Table-Export</h4>
+    <p-table #dt [columns]="cols" [value]="cars" selectionMode="multiple" [(selection)]="selectedCars">
+      <ng-template pTemplate="caption">
+        <div class="ui-helper-clearfix">
+          <button type="button" pButton icon="fa-file-o" iconPos="left" label="All Data" (click)="dt.exportCSV()" style="float:left"></button>
+          <button type="button" pButton icon="fa-file" iconPos="left" label="Selection Only" (click)="dt.exportCSV({selectionOnly:true})"
+            style="float:right"></button>
+        </div>
+      </ng-template>
+      <ng-template pTemplate="header" let-columns>
+        <tr>
+          <th *ngFor="let col of columns">
+            {{col.header}}
+          </th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-rowData let-columns="columns">
+        <tr [pSelectableRow]="rowData">
+          <td *ngFor="let col of columns">
+            {{rowData[col.field]}}
+          </td>
+        </tr>
+      </ng-template>
+    </p-table>
+  </div>
+
+  <div class="row" style="padding-top: 20px;">
+    <div class="col-sm-8">
+      <h3>Horizontal and Vertical Table-Scroll</h3>
+      <p-table [columns]="cols" [value]="cars" [scrollable]="true" [style]="{width:'500px'}" scrollHeight="200px">
+        <ng-template pTemplate="colgroup" let-columns>
+          <colgroup>
+            <col *ngFor="let col of columns" style="width:250px">
+          </colgroup>
+        </ng-template>
+        <ng-template pTemplate="header" let-columns>
+          <tr>
+            <th *ngFor="let col of columns">
+              {{col.header}}
+            </th>
+          </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-rowData let-columns="columns">
+          <tr>
+            <td *ngFor="let col of columns">
+              {{rowData[col.field]}}
+            </td>
+          </tr>
+        </ng-template>
+      </p-table>
+    </div>
+
+    <div class="col-sm-4">
+      <h4>Media</h4>
+      <p-galleria [images]="images" panelWidth="260" panelHeight="210" [showCaption]="true"></p-galleria>
+    </div>
+
+  </div>
+
+  <div style="padding-top: 20px;">
+    <h4>File Upload</h4>
+    <p-fileUpload name="myfile[]" url="./upload.php"></p-fileUpload>
+  </div>
+
+  <div style="padding-top: 20px;">
+    <h4>Mega-Menu</h4>
+    <p-megaMenu [model]="model_items">
+      <input type="text" pInputText placeholder="Search">
+      <button pButton label="Logout" (click)="logout()" icon="fa-sign-out"></button>
+    </p-megaMenu>
+  </div>
+
+  <div class="row" style="padding-top: 20px;">
+
+    <div class="col-sm-4">
+      <h4>Toggle-Button</h4>
+      <p-toggleButton onLabel="I-Confirm" offLabel="I-Reject" onIcon="fa-check-square" offIcon="fa-square" [(ngModel)]="val"></p-toggleButton>
+    </div>
+
+    <div class="col-sm-4">
+      <h4>Password Field</h4>
+      <input type="password" pPassword />
+    </div>
+
+    <div class="col-sm-4">
+      <h4>Rating</h4>
+      <p-rating [(ngModel)]="rating"></p-rating>
+    </div>
+
+  </div>
+
+  <div class="row" style="padding-top: 20px;">
+
+    <div class="col-sm-3">
+      <h4>Calander</h4>
+      <p-calendar [(ngModel)]="dateValue" [monthNavigator]="true" [yearNavigator]="true" yearRange="1960:2030"[showIcon]="true" showTime="true" hourFormat="12" [locale]="en"></p-calendar>
+    </div>
+
+    <div class="col-sm-3">
+      <h4>Dialog-Box</h4>
+      <p-confirmDialog header="Confirmation" icon="fa fa-question-circle" width="425">
+      </p-confirmDialog>
+      <button type="text" (click)="confirm()" pButton icon="fa-check" label="Confirm"></button>
+    </div>
+
+    <div class="col-sm-3">
+      <h4>SplitButton</h4>
+      <p-splitButton label="Save" icon="fa-check" [model]="items"></p-splitButton>
+    </div>
+
+    <div class="col-sm-3">
+      <h4>Button</h4>
+      <button pButton type="button" label="Click"></button>
+      <button pButton type="button" icon="fa-check" iconPos="left"></button>
+    </div>
+
+  </div>
+
+  <div style="padding-top: 20px;">
+    <h4>OrganizationChart</h4>
+    <p-organizationChart [value]="data" selectionMode="single" [(selection)]="selectedNode"></p-organizationChart>
+  </div>
+
+</div>
